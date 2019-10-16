@@ -22,6 +22,16 @@ function Product(name) {
   allProducts.push(this);
 }
 
+new Product('bag');
+new Product('banana');
+new Product('bathroom');
+new Product('boots');
+new Product('breakfast');
+new Product('bubblegum');
+new Product('chair');
+new Product('cthulhu');
+new Product('dog-duck');
+
 function makeRandom() {
   return Math.floor(Math.random() * allProducts.length);
 }
@@ -51,16 +61,6 @@ function renderProducts() {
   rightImageEl.title = allProducts[uniquePicsArray[1]].name;
 }
 
-
-new Product('bag');
-new Product('banana');
-new Product('bathroom');
-new Product('boots');
-new Product('breakfast');
-new Product('bubblegum');
-new Product('chair');
-new Product('cthulhu');
-new Product('dog-duck');
 
 function handleClick() {
   var chosenImage = event.target.title;
