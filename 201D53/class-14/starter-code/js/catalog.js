@@ -23,8 +23,9 @@ function populateForm() {
 
 function importCart() {
   if (localStorage.getItem('classBusMall')) {
-    cart = JSON.parse(localStorage.getItem('classBusMall'));
-    console.log('cart.items',cart.items[0]);
+    var localCart = JSON.parse(localStorage.getItem('classBusMall'));
+    cart.items = localCart.items;
+    console.log('localCart',localCart);
   }
 }
 function previewCart() {
@@ -33,6 +34,8 @@ function previewCart() {
     newDiv.textContent = `${cart.items[i].product} (${cart.items[i].quantity})`;
     document.getElementById('cartContents').appendChild(newDiv);
   }
+  var counter = document.getElementById('itemCount');
+  counter.textContent = cart.items.length;
 }
 
 
