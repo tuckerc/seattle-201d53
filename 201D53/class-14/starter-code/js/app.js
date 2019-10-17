@@ -13,12 +13,7 @@ Cart.prototype.addItem = function(product, quantity) {
 
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
-  if(supportsHTML5Storage()) {
-    // write to local products
-    localStorage.setItem('classBusMall',JSON.stringify(this));
-    return true;
-  }
-  return false;
+  localStorage.setItem('classBusMall',JSON.stringify(this));
 };
 
 Cart.prototype.removeItem = function(name) {

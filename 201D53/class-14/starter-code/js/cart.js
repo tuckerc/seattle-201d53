@@ -33,7 +33,7 @@ function showCart() {
   // TODO: Find the table body
   var tBody = document.getElementById('cart').getElementsByTagName('tbody')[0];
   // TODO: Iterate over the items in the cart
-  for (var item in Cart.items) {
+  for (var item in cart.items) {
     // TODO: Create a TR
     var newTR = document.createElement('tr');
     // TODO: Create a TD for the delete link, quantity,  and the item
@@ -54,9 +54,9 @@ function removeItemFromCart(event) {
 
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
   var removeItem = event.target.parentElement.lastChild.textContent;
-  Cart.removeItem(removeItem);
+  cart.removeItem(removeItem);
   // TODO: Save the cart back to local storage
-  Cart.saveToLocalStorage();
+  cart.saveToLocalStorage();
   // TODO: Re-draw the cart table
   renderCart();
 }
