@@ -17,8 +17,16 @@ function populateForm() {
     newOption.textContent = Product.allProducts[i].name;
     selectElement.appendChild(newOption);
   }
-
+  importCart();
 }
+
+function importCart() {
+  if (localStorage.getItem('classBusMall')) {
+    cart = JSON.parse(localStorage.getItem('classBusMall'));
+    console.log('cart.items',cart.items);
+  }
+}
+
 
 // When someone submits the form, we need to add the selected item to the cart
 // object, save the whole thing back to local storage and update the screen
@@ -41,7 +49,6 @@ function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   var selectedIndex = document.getElementById('items').selectedIndex;
   var selectedItem = document.getElementById('items')[selectedIndex].value;
-  console.log('test',document.getElementById('items')[selectedIndex]);
   // TODO: get the quantity
   var quantity = document.getElementById('quantity').value;
   // TODO: using those, add one item to the Cart
@@ -61,10 +68,11 @@ function updateCartPreview() {
   var quantity = document.getElementById('quantity').value;
   // TODO: Add a new element to the cartContents div with that information
   var newDiv = document.createElement('div');
-  console.log(`${selectedItem} (${quantity})`);
   newDiv.textContent = `${selectedItem} (${quantity})`;
   document.getElementById('cartContents').appendChild(newDiv);
 }
+
+
 
 // Set up the "submit" event listener on the form.
 // This is the trigger for the app. When a user "submits" the form, it will
