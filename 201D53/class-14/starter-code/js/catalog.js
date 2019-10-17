@@ -18,12 +18,20 @@ function populateForm() {
     selectElement.appendChild(newOption);
   }
   importCart();
+  previewCart();
 }
 
 function importCart() {
   if (localStorage.getItem('classBusMall')) {
     cart = JSON.parse(localStorage.getItem('classBusMall'));
-    console.log('cart.items',cart.items);
+    console.log('cart.items',cart.items[0]);
+  }
+}
+function previewCart() {
+  for (var i =0; i < cart.items.length; i++) {
+    var newDiv = document.createElement('div');
+    newDiv.textContent = `${cart.items[i].product} (${cart.items[i].quantity})`;
+    document.getElementById('cartContents').appendChild(newDiv);
   }
 }
 
