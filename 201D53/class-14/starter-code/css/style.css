@@ -1,1 +1,112 @@
 /* TODO: Make it awesome */
+/* index.html - card to the right */
+body {
+    margin: 0 auto;
+    width: 90vw;
+}
+body>header {
+    height: 60px;
+    border: 2px solid darkgreen;
+}
+body>header>h1 {
+    font: 25px arial, sans-serif;
+    float: left;
+    padding: 5PX;
+}
+nav>ul>li {
+    padding: 5px;
+    display: inline-block;
+    color: darkslategray;
+}
+div.card>header {
+    height: 40px;
+    border: 2px solid darkorange;
+    margin-bottom: 1px;
+}
+main {
+    height: 70vh;
+    background-color: ivory;
+}
+#cartContents {
+    width: 20vw;
+    height: 70vh;
+    float: right;
+}
+form {
+    margin: 5px;
+    width: 60vh;
+    height: 280px;
+    /* border: 2px solid darkgreen; */
+}
+legend {
+    font: 25px arial, sans-serif;
+}
+footer {
+    height: 80px;
+    border: 2px solid darkblue;
+}
+/*copied from https://codepen.io/jmalatia/pen/MJaVxL?editors=0100#0 */
+body>header>nav>ul>li>span {
+    margin: 3px;
+    color: red;
+}
+
+/*Below form styling from https://www.sanwebe.com/2014/08/css-html-forms-designs */
+fieldset{
+	border: none;
+}
+legend {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+label {
+	display: block;
+    margin-bottom: 8px;
+}
+input[type="text"],
+input[type="number"],
+select {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background: rgba(255,255,255,.1);
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #e8eeef;
+	color: black;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	margin-bottom: 30px;
+}
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus{
+	background: #d2d9dd;
+}
+input[type="submit"]
+{
+	position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	margin: 0 auto;
+	background: #1abc9c;
+	font-size: 18px;
+	text-align: center;
+	font-style: normal;
+	width: 100%;
+	border: 1px solid #16a085;
+	border-width: 1px 1px 3px;
+	margin-bottom: 10px;
+}
+input[type="submit"]:hover
+{
+	background: #109177;
+}
