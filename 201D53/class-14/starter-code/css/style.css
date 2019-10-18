@@ -7,7 +7,7 @@ body {
 }
 body>header {
     height: 60px;
-    border: 2px solid darkgreen;
+    background-color: lightseagreen;
     position: relative;
 }
 body>header>h1 {
@@ -30,7 +30,7 @@ div.card>header {
 }
 main {
     height: 70vh;
-    background-color: ivory;
+    background-color: oldlace;
 }
 body > main > section.deck.col-2 > div:nth-child(1) > div {
     float: left;
@@ -65,7 +65,7 @@ legend {
 }
 footer {
     height: 80px;
-    border: 2px solid darkblue;
+    background-color: lightgrey;
 }
 body>header>nav>ul>li>span {
     margin: 3px;
