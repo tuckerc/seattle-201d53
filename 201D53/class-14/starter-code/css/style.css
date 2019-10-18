@@ -136,8 +136,8 @@ input[type="submit"]:hover
 /* https://learn.shayhowe.com/advanced-html-css/transitions-animations/ */
 input[type="submit"]:active
 {
-	box-shadow: 0 2px 0 #006599;
-    transform: translateY(3px);
+	box-shadow: 40px 0 0 red, 0 0 .4em #1abc9c;
+    transform: translateX(15px);
 }
 table {
     margin: 20px auto;
@@ -150,3 +150,4 @@ table {
     padding: 5px;
     text-align: center;
   }
+  #cartContents > div
