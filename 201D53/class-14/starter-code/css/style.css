@@ -3,35 +3,57 @@
 body {
     margin: 0 auto;
     width: 90vw;
+    font-family: Georgia, "Times New Roman", Times, serif;
 }
 body>header {
     height: 60px;
     border: 2px solid darkgreen;
+    position: relative;
 }
 body>header>h1 {
     font: 25px arial, sans-serif;
     float: left;
     padding: 5PX;
 }
+nav {
+    bottom: 2px;
+    right: 20vw;
+    position: absolute;
+}
 nav>ul>li {
     padding: 5px;
     display: inline-block;
-    color: darkslategray;
 }
 div.card>header {
     height: 40px;
-    border: 2px solid darkorange;
-    margin-bottom: 1px;
+    padding: 2px;
 }
 main {
     height: 70vh;
     background-color: ivory;
 }
+body > main > section.deck.col-2 > div:nth-child(1) > div {
+    float: left;
+}
+
 #cartContents {
     width: 20vw;
-    height: 70vh;
+    height: 50vh;
     float: right;
+    padding: 5px;
+    font-family: Georgia, "Times New Roman", Times, serif;
 }
+
+/* http://jsfiddle.net/D2Xht/165/ */
+/* #cartContents>div:last-child { 
+    color: red;
+    transition: all 2.5s ease-in;
+    overflow:hidden;
+}
+#cartContents>div:not(:empty){    
+    color: black;
+} */
+
 form {
     margin: 5px;
     width: 60vh;
@@ -45,9 +67,9 @@ footer {
     height: 80px;
     border: 2px solid darkblue;
 }
-/*copied from https://codepen.io/jmalatia/pen/MJaVxL?editors=0100#0 */
 body>header>nav>ul>li>span {
     margin: 3px;
+    font-weight: bold;
     color: red;
 }
 
@@ -104,9 +126,27 @@ input[type="submit"]
 	width: 100%;
 	border: 1px solid #16a085;
 	border-width: 1px 1px 3px;
-	margin-bottom: 10px;
+    margin-bottom: 10px;
+    transition: all .1s linear;
 }
 input[type="submit"]:hover
 {
 	background: #109177;
 }
+/* https://learn.shayhowe.com/advanced-html-css/transitions-animations/ */
+input[type="submit"]:active
+{
+	box-shadow: 0 2px 0 #006599;
+    transform: translateY(3px);
+}
+table {
+    margin: 20px auto;
+    border: 1px solid black;
+  }
+  th {
+      font-weight: bold;
+  }
+  th, td {
+    padding: 5px;
+    text-align: center;
+  }
