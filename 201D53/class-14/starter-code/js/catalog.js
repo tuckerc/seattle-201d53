@@ -53,6 +53,8 @@ function handleSubmit(event) {
   updateCounter();
   updateCartPreview();
 
+  document.getElementById('items').selectedIndex = 0;
+  document.getElementById('quantity').value = '';
 }
 
 // TODO: Add the selected item and quantity to the cart
