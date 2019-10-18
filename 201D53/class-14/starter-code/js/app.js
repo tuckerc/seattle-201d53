@@ -16,11 +16,13 @@ Cart.prototype.saveToLocalStorage = function() {
   localStorage.setItem('classBusMall',JSON.stringify(this));
 };
 
-Cart.prototype.removeItem = function(name) {
+Cart.prototype.removeItem = function(name, qty) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
-  if(this.items.name.includes(name)) {
-    this.items.splice(this.items.indexOf(name),1);
+  for(var i = 0; i < this.items.length; i++) {
+    if(this.items[i].product === name && this.items[i].quantity === qty) {
+      this.items.splice(i,1);
+    }
   }
 };
 
@@ -62,5 +64,3 @@ function generateCatalog() {
 
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
-
-console.log(Product);
