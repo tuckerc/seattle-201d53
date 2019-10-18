@@ -8,8 +8,8 @@ table.addEventListener('click', removeItemFromCart);
 var cart;
 
 function loadCart() {
-  var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-  cart = new Cart(cartItems);
+  var cartItems = JSON.parse(localStorage.getItem('classBusMall')) || [];
+  cart = new Cart(cartItems.items);
 }
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
@@ -33,20 +33,23 @@ function showCart() {
   // TODO: Find the table body
   var tBody = document.getElementById('cart').getElementsByTagName('tbody')[0];
   // TODO: Iterate over the items in the cart
-  for (var item in cart.items) {
+  console.log('length : ',cart.items.length);
+  for (var item = 0; item < cart.items.length; item++) { // var item in cart.items
+    console.log('cart.items',cart.items[item]);
     // TODO: Create a TR
     var newTR = document.createElement('tr');
     // TODO: Create a TD for the delete link, quantity,  and the item
     var deleteLink = document.createElement('td');
-    deleteLink.textContent = 'Delte';
+    deleteLink.textContent = 'Delete';
     var quantityTD = document.createElement('td');
-    quantityTD = item.quantity;
+    quantityTD.textContent = cart.items[item].quantity;
     var itemTD = document.createElement('td');
-    itemTD = item.name;
+    itemTD.textContent = cart.items[item].product;
     // TODO: Add the TR to the TBODY and each of the TD's to the TR
     newTR.appendChild(deleteLink);
     newTR.appendChild(quantityTD);
     newTR.appendChild(itemTD);
+    tBody.appendChild(newTR);
   }
 }
 

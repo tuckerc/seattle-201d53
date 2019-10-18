@@ -17,8 +17,27 @@ function populateForm() {
     newOption.textContent = Product.allProducts[i].name;
     selectElement.appendChild(newOption);
   }
-
+  importCart();
+  previewCart();
 }
+
+function importCart() {
+  if (localStorage.getItem('classBusMall')) {
+    var localCart = JSON.parse(localStorage.getItem('classBusMall'));
+    cart.items = localCart.items;
+    console.log('localCart',localCart);
+  }
+}
+function previewCart() {
+  for (var i =0; i < cart.items.length; i++) {
+    var newDiv = document.createElement('div');
+    newDiv.textContent = `${cart.items[i].product} (${cart.items[i].quantity})`;
+    document.getElementById('cartContents').appendChild(newDiv);
+  }
+  var counter = document.getElementById('itemCount');
+  counter.textContent = cart.items.length;
+}
+
 
 // When someone submits the form, we need to add the selected item to the cart
 // object, save the whole thing back to local storage and update the screen
@@ -34,13 +53,15 @@ function handleSubmit(event) {
   updateCounter();
   updateCartPreview();
 
+  document.getElementById('items').selectedIndex = 0;
+  document.getElementById('quantity').value = '';
 }
 
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   var selectedIndex = document.getElementById('items').selectedIndex;
-  var selectedItem = document.getElementById('items')[selectedIndex];
+  var selectedItem = document.getElementById('items')[selectedIndex].value;
   // TODO: get the quantity
   var quantity = document.getElementById('quantity').value;
   // TODO: using those, add one item to the Cart
@@ -56,13 +77,15 @@ function updateCounter() {
 function updateCartPreview() {
   // TODO: Get the item and quantity from the form
   var selectedIndex = document.getElementById('items').selectedIndex;
-  var selectedItem = document.getElementById('items')[selectedIndex];
+  var selectedItem = document.getElementById('items')[selectedIndex].textContent;
   var quantity = document.getElementById('quantity').value;
   // TODO: Add a new element to the cartContents div with that information
   var newDiv = document.createElement('div');
   newDiv.textContent = `${selectedItem} (${quantity})`;
-  document.getElementById('cartContents').appendChild(newDiv);  
+  document.getElementById('cartContents').appendChild(newDiv);
 }
+
+
 
 // Set up the "submit" event listener on the form.
 // This is the trigger for the app. When a user "submits" the form, it will
